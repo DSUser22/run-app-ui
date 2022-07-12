@@ -1,0 +1,22 @@
+if(!err?.response){
+  setErrMsg('no server response')
+} else if(err.response?.status === 403 && err.response?.data === 'token not found'){
+  setErrMsg('token not found')
+  console.log('token not found')
+  //setShowModal(true, 'token not found');
+} else if(err.response?.status === 403 && err.response?.data === 'email already confirmed'){
+  setErrMsg('email already confirmed')
+  console.log('email already confirmed')
+  //setShowModal(true, 'email already confirmed');
+} else if(err.response?.status === 403 && err.response?.data === 'time is over'){
+  setErrMsg('time is over')
+  console.log('time is over')
+  //setShowModal(true, 'time is over');
+} else if(err.response?.status === 200){
+  console.log('need to confirm')
+  console.log('need to confirm')
+  //setShowModal(true, 'need to confirm');
+} else{
+  setErrMsg('Registration Failded')
+  //setShowModal(true, 'smth went wrong');
+}
